@@ -1,1 +1,90 @@
 
+import java.util.Scanner;
+public class StudentGradesystem{
+    int hindi,math,english,physics,chemistry;
+    double percentage,total;
+    
+
+    public void getMarks()
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("<<<<------------------------------------------------------------------>>>>>>> ");
+        System.out.print("Enter the Marsk of Hindi :");
+        hindi = sc.nextInt();
+
+        System.out.println(" ");
+         
+        System.out.print("Enter the Marsk of English :");
+        english = sc.nextInt();
+
+        System.out.println(" ");
+
+        System.out.print("Enter the Marsk of Math :");
+        math = sc.nextInt();
+
+        System.out.println(" ");
+
+        System.out.print("Enter the Marsk of Physics :");
+        physics = sc.nextInt();
+
+        System.out.println(" ");
+
+        System.out.print("Enter the Marsk of Chemistrty :");
+        chemistry = sc.nextInt();
+
+        System.out.println(" ");
+    }
+
+    public double calculateMarks()
+    {
+        total = (hindi + chemistry + math + english + physics);
+        return total;
+    }
+
+    public double calculatePercentage()
+    {
+        percentage = (total/500)*100;
+        return percentage;
+    }
+
+    public void gradeCalculate()
+    {
+        if((percentage>=80.0)&&(percentage<=100.0))
+        {
+              System.out.println("Grade: A");
+        }
+
+        else if((percentage>=65.0)&&(percentage<=80.0))
+        {
+            System.out.println("Grade: B");
+        }
+
+         else if((percentage>=55.0)&&(percentage<=65.0))
+        {
+            System.out.println("Grade: C");
+        }
+
+         else if((percentage>=50.0)&&(percentage<=55.0))
+        {
+            System.out.println("Grade: D");
+        }
+        
+        else
+        {
+            System.out.println("FAIL");
+        }
+
+        
+    }
+    public static void main(String[] args) {
+
+        StudentGradesystem s1 = new StudentGradesystem();
+        s1.getMarks();
+        System.out.println("");
+        System.out.println("<<<<<<-----------------RESULT---------------------------->>>>>>>>");
+        System.out.println("Total marks: " + s1.calculateMarks());
+        System.out.println("Percentage: " +s1.calculatePercentage()+"%");
+        s1.gradeCalculate();
+      
+    }
+}
